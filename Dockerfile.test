@@ -1,0 +1,17 @@
+# Dockerfile para execução de testes
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Copia requirements e instala dependências
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia código fonte
+COPY src/ ./src/
+COPY flask_app.py .
+COPY test_flask_app.py .
+COPY src/test_app.py ./src/
+
+# Executa testes
+CMD ["python", "-m", "pytest", "-v", "test_flask_app.py", "src/test_app.py"]

@@ -1,6 +1,7 @@
 # CI/CD Exercício
 
 Este projeto implementa todos os exercícios práticos de fundamentos de CI/CD, demonstrando conceitos de Integração Contínua (CI) e Entrega Contínua (CD) utilizando Git, - Verificar se o branch está configurado corretamente
+
 - Confirmar que o arquivo está em `.github/workflows/`
 - Validar sintaxe YAML
 
@@ -85,9 +86,7 @@ O pipeline é executado em dois cenários:
 
 ### Para Push na Main
 
-Executa todos os passos acima, mais:
-7. Criação de release automático
-8. Upload do artefato projeto.zip
+Executa todos os passos acima, mais: 7. Criação de release automático 8. Upload do artefato projeto.zip
 
 ## Como Usar
 
@@ -146,7 +145,7 @@ pytest src/test_app.py --cov=src
 ### Funções Matemáticas
 
 - `soma(a, b)`: Retorna a + b
-- `multiplica(a, b)`: Retorna a * b
+- `multiplica(a, b)`: Retorna a \* b
 - `subtrai(a, b)`: Retorna a - b
 - `divide(a, b)`: Retorna a / b (com tratamento de divisão por zero)
 

@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  calculator-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./src:/app/src
+      - ./flask_app.py:/app/flask_app.py
+    restart: unless-stopped
+
+  calculator-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - ./src:/app/src
+      - ./test_flask_app.py:/app/test_flask_app.py
+      - ./src/test_app.py:/app/src/test_app.py
+    command: python -m pytest -v test_flask_app.py src/test_app.py
