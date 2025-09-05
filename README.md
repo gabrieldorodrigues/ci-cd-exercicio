@@ -22,6 +22,7 @@ ci-cd-exercicio/
 ## 🎯 Exercícios Implementados
 
 ### ✅ Exercício 1: Configuração de CI Básica
+
 - ✅ Repositório GitHub criado
 - ✅ Aplicação Python com função `soma(a, b)`
 - ✅ Testes unitários com pytest
@@ -29,18 +30,23 @@ ci-cd-exercicio/
 - ✅ Demonstração de falha e correção de pipeline
 
 ### ✅ Exercício 2: Integração de Linter
+
 - ✅ Linter flake8 integrado ao pipeline
 - ✅ Código ajustado aos padrões do flake8
 - ✅ Pipeline atualizado para incluir verificação de estilo
 - ✅ Demonstração de falha e correção do linter
 
 ### ✅ Exercício 3: Deploy Simples (CD)
+
 - ✅ Script `build.sh` para empacotamento
 - ✅ Script `build.ps1` para Windows
 - ✅ Pipeline CD configurado para criar releases
 - ✅ Upload automático de artefatos no GitHub Releases
+- ✅ **Correção**: Atualização para `softprops/action-gh-release@v1` (moderno)
+- ✅ **Correção**: Adicionadas permissões `contents: write` para releases
 
 ### ✅ Exercício 4: Pull Requests
+
 - ✅ Branch `feature/nova-funcao` criado
 - ✅ Novas funções adicionadas (subtrai, divide)
 - ✅ Testes correspondentes implementados
@@ -51,6 +57,7 @@ ci-cd-exercicio/
 O pipeline é executado em dois cenários:
 
 ### 🔄 Para Pull Requests
+
 1. **Checkout** do código
 2. **Setup** do Python 3.9
 3. **Instalação** das dependências
@@ -59,18 +66,19 @@ O pipeline é executado em dois cenários:
 6. **Build** do artefato
 
 ### 🚀 Para Push na Main
-Executa todos os passos acima, mais:
-7. **Criação** de release automático
-8. **Upload** do artefato projeto.zip
+
+Executa todos os passos acima, mais: 7. **Criação** de release automático 8. **Upload** do artefato projeto.zip
 
 ## 🛠️ Como Usar
 
 ### Pré-requisitos
+
 - Python 3.x
 - Git
 - Conta no GitHub
 
 ### Instalação Local
+
 ```bash
 # Clone o repositório
 git clone https://github.com/seu-usuario/ci-cd-exercicio.git
@@ -81,6 +89,7 @@ pip install -r requirements.txt
 ```
 
 ### Execução Local
+
 ```bash
 # Execute os testes
 pytest src/test_app.py -v
@@ -115,12 +124,14 @@ pytest src/test_app.py --cov=src
 ## 📋 Funcionalidades
 
 ### Funções Matemáticas
+
 - `soma(a, b)`: Retorna a + b
-- `multiplica(a, b)`: Retorna a * b
+- `multiplica(a, b)`: Retorna a \* b
 - `subtrai(a, b)`: Retorna a - b
 - `divide(a, b)`: Retorna a / b (com tratamento de divisão por zero)
 
 ### Pipeline Features
+
 - ✅ Testes automatizados
 - ✅ Verificação de qualidade (linter)
 - ✅ Build automatizado
@@ -130,11 +141,13 @@ pytest src/test_app.py --cov=src
 ## 🔧 Demonstrações Realizadas
 
 ### Falha Intencional e Correção
+
 1. **Erro na função soma**: `return a + b + 1` (corrigido)
 2. **Erro de linter**: Falta de nova linha no final (corrigido)
 3. **Teste que falha**: Demonstrado e corrigido
 
 ### Fluxo de Pull Request
+
 1. Branch `feature/nova-funcao` criado
 2. Novas funções implementadas
 3. Testes adicionados
@@ -152,12 +165,34 @@ Para expandir este projeto, considere:
 - 📱 Notificações automáticas
 - 🎯 Environments de staging/production
 
-## 📚 Recursos Úteis
+## � Troubleshooting
+
+### Erro "Resource not accessible by integration"
+**Problema**: Erro ao criar releases com actions antigas
+**Solução**: ✅ Implementada
+- Atualizado para `softprops/action-gh-release@v1`
+- Adicionadas permissões `contents: write`
+- Migrado de actions deprecated
+
+### Problemas de Permissões no GitHub Actions
+```yaml
+permissions:
+  contents: write  # Para criar releases
+  packages: write  # Para publicar packages
+```
+
+### Pipeline não executa em PRs
+- Verificar se o branch está configurado corretamente
+- Confirmar que o arquivo está em `.github/workflows/`
+- Validar sintaxe YAML
+
+## �📚 Recursos Úteis
 
 - [Documentação GitHub Actions](https://docs.github.com/en/actions)
 - [Tutorial Pytest](https://docs.pytest.org/en/stable/)
 - [Guia Flake8](https://flake8.pycqa.org/en/latest/)
 - [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [softprops/action-gh-release](https://github.com/softprops/action-gh-release)
 
 ## 📄 Licença
 
