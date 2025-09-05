@@ -1,8 +1,26 @@
 # CI/CD Exercício
 
-Este projeto implementa todos os exercícios práticos de fundamentos de CI/CD, demonstrando conceitos de Integração Contínua (CI) e Entrega Contínua (CD) utilizando Git, GitHub e GitHub Actions.
+Este projeto implementa todos os exercícios práticos de fundamentos de CI/CD, demonstrando conceitos de Integração Contínua (CI) e Entrega Contínua (CD) utilizando Git, - Verificar se o branch está configurado corretamente
+- Confirmar que o arquivo está em `.github/workflows/`
+- Validar sintaxe YAML
 
-## 📁 Estrutura do Projeto
+## Recursos Úteis
+
+- [Documentação GitHub Actions](https://docs.github.com/en/actions)
+- [Tutorial Pytest](https://docs.pytest.org/en/stable/)
+- [Guia Flake8](https://flake8.pycqa.org/en/latest/)
+- [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [softprops/action-gh-release](https://github.com/softprops/action-gh-release)
+
+## Licença
+
+Este projeto está licenciado sob a MIT License.
+
+---
+
+Status: Todos os exercícios implementados e testadosions.
+
+## Estrutura do Projeto
 
 ```
 ci-cd-exercicio/
@@ -19,57 +37,59 @@ ci-cd-exercicio/
 └── README.md              # Esta documentação
 ```
 
-## 🎯 Exercícios Implementados
+## Exercícios Implementados
 
-### ✅ Exercício 1: Configuração de CI Básica
+### Exercício 1: Configuração de CI Básica
 
-- ✅ Repositório GitHub criado
-- ✅ Aplicação Python com função `soma(a, b)`
-- ✅ Testes unitários com pytest
-- ✅ Pipeline básico de CI configurado
-- ✅ Demonstração de falha e correção de pipeline
+- Repositório GitHub criado
+- Aplicação Python com função `soma(a, b)`
+- Testes unitários com pytest
+- Pipeline básico de CI configurado
+- Demonstração de falha e correção de pipeline
 
-### ✅ Exercício 2: Integração de Linter
+### Exercício 2: Integração de Linter
 
-- ✅ Linter flake8 integrado ao pipeline
-- ✅ Código ajustado aos padrões do flake8
-- ✅ Pipeline atualizado para incluir verificação de estilo
-- ✅ Demonstração de falha e correção do linter
+- Linter flake8 integrado ao pipeline
+- Código ajustado aos padrões do flake8
+- Pipeline atualizado para incluir verificação de estilo
+- Demonstração de falha e correção do linter
 
-### ✅ Exercício 3: Deploy Simples (CD)
+### Exercício 3: Deploy Simples (CD)
 
-- ✅ Script `build.sh` para empacotamento
-- ✅ Script `build.ps1` para Windows
-- ✅ Pipeline CD configurado para criar releases
-- ✅ Upload automático de artefatos no GitHub Releases
-- ✅ **Correção**: Atualização para `softprops/action-gh-release@v1` (moderno)
-- ✅ **Correção**: Adicionadas permissões `contents: write` para releases
+- Script `build.sh` para empacotamento
+- Script `build.ps1` para Windows
+- Pipeline CD configurado para criar releases
+- Upload automático de artefatos no GitHub Releases
+- Correção: Atualização para `softprops/action-gh-release@v1` (moderno)
+- Correção: Adicionadas permissões `contents: write` para releases
 
-### ✅ Exercício 4: Pull Requests
+### Exercício 4: Pull Requests
 
-- ✅ Branch `feature/nova-funcao` criado
-- ✅ Novas funções adicionadas (subtrai, divide)
-- ✅ Testes correspondentes implementados
-- ✅ Fluxo de pull request demonstrado
+- Branch `feature/nova-funcao` criado
+- Novas funções adicionadas (subtrai, divide)
+- Testes correspondentes implementados
+- Fluxo de pull request demonstrado
 
-## 🚀 Pipeline CI/CD
+## Pipeline CI/CD
 
 O pipeline é executado em dois cenários:
 
-### 🔄 Para Pull Requests
+### Para Pull Requests
 
-1. **Checkout** do código
-2. **Setup** do Python 3.9
-3. **Instalação** das dependências
-4. **Linter** com flake8
-5. **Testes** com pytest
-6. **Build** do artefato
+1. Checkout do código
+2. Setup do Python 3.9
+3. Instalação das dependências
+4. Linter com flake8
+5. Testes com pytest
+6. Build do artefato
 
-### 🚀 Para Push na Main
+### Para Push na Main
 
-Executa todos os passos acima, mais: 7. **Criação** de release automático 8. **Upload** do artefato projeto.zip
+Executa todos os passos acima, mais:
+7. Criação de release automático
+8. Upload do artefato projeto.zip
 
-## 🛠️ Como Usar
+## Como Usar
 
 ### Pré-requisitos
 
@@ -104,14 +124,14 @@ flake8 src/app.py
 powershell -ExecutionPolicy Bypass -File build.ps1
 ```
 
-## 🧪 Testes
+## Testes
 
 O projeto inclui testes completos para todas as funções:
 
-- **test_soma()**: Testa adição de números
-- **test_multiplica()**: Testa multiplicação
-- **test_subtrai()**: Testa subtração
-- **test_divide()**: Testa divisão e tratamento de erro
+- test_soma(): Testa adição de números
+- test_multiplica(): Testa multiplicação
+- test_subtrai(): Testa subtração
+- test_divide(): Testa divisão e tratamento de erro
 
 ```bash
 # Executar todos os testes
@@ -121,30 +141,30 @@ pytest src/test_app.py -v
 pytest src/test_app.py --cov=src
 ```
 
-## 📋 Funcionalidades
+## Funcionalidades
 
 ### Funções Matemáticas
 
 - `soma(a, b)`: Retorna a + b
-- `multiplica(a, b)`: Retorna a \* b
+- `multiplica(a, b)`: Retorna a * b
 - `subtrai(a, b)`: Retorna a - b
 - `divide(a, b)`: Retorna a / b (com tratamento de divisão por zero)
 
 ### Pipeline Features
 
-- ✅ Testes automatizados
-- ✅ Verificação de qualidade (linter)
-- ✅ Build automatizado
-- ✅ Deploy automático via releases
-- ✅ Suporte a pull requests
+- Testes automatizados
+- Verificação de qualidade (linter)
+- Build automatizado
+- Deploy automático via releases
+- Suporte a pull requests
 
-## 🔧 Demonstrações Realizadas
+## Demonstrações Realizadas
 
 ### Falha Intencional e Correção
 
-1. **Erro na função soma**: `return a + b + 1` (corrigido)
-2. **Erro de linter**: Falta de nova linha no final (corrigido)
-3. **Teste que falha**: Demonstrado e corrigido
+1. Erro na função soma: `return a + b + 1` (corrigido)
+2. Erro de linter: Falta de nova linha no final (corrigido)
+3. Teste que falha: Demonstrado e corrigido
 
 ### Fluxo de Pull Request
 
@@ -168,20 +188,24 @@ Para expandir este projeto, considere:
 ## � Troubleshooting
 
 ### Erro "Resource not accessible by integration"
+
 **Problema**: Erro ao criar releases com actions antigas
 **Solução**: ✅ Implementada
+
 - Atualizado para `softprops/action-gh-release@v1`
 - Adicionadas permissões `contents: write`
 - Migrado de actions deprecated
 
 ### Problemas de Permissões no GitHub Actions
+
 ```yaml
 permissions:
-  contents: write  # Para criar releases
-  packages: write  # Para publicar packages
+  contents: write # Para criar releases
+  packages: write # Para publicar packages
 ```
 
 ### Pipeline não executa em PRs
+
 - Verificar se o branch está configurado corretamente
 - Confirmar que o arquivo está em `.github/workflows/`
 - Validar sintaxe YAML
