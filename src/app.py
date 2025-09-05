@@ -1,5 +1,5 @@
 def soma(a, b):
-    return a + b + 1  # ← Erro intencional para fazer o pipeline falhar
+    return a + b
 
 
 def multiplica(a, b):
