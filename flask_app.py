@@ -38,7 +38,12 @@ def api_soma(a, b):
 def api_multiplica(a, b):
     try:
         result = multiplica(a, b)
-        return jsonify({"operation": "multiply", "a": a, "b": b, "result": result})
+        return jsonify({
+            "operation": "multiply",
+            "a": a,
+            "b": b,
+            "result": result
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -47,7 +52,12 @@ def api_multiplica(a, b):
 def api_subtrai(a, b):
     try:
         result = subtrai(a, b)
-        return jsonify({"operation": "subtract", "a": a, "b": b, "result": result})
+        return jsonify({
+            "operation": "subtract",
+            "a": a,
+            "b": b,
+            "result": result
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -56,7 +66,12 @@ def api_subtrai(a, b):
 def api_divide(a, b):
     try:
         result = divide(a, b)
-        return jsonify({"operation": "divide", "a": a, "b": b, "result": result})
+        return jsonify({
+            "operation": "divide",
+            "a": a,
+            "b": b,
+            "result": result
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
